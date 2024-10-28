@@ -46,67 +46,22 @@ public class Odev3{
 }	
 // final iki "l" ile çünkü tek "l" ile yazıldığında java onu bir değişken olarak algılamıyor.	
 	
-		
-		 Scanner scan = new Scanner(System.in);
-	     System.out.println("Emailinizi giriniz");
-	     String email = scan.next();
-	     String domain = email.substring(email.length()-10);
+	Scanner scan = new Scanner(System.in);
+    System.out.println("Emailinizi giriniz:");
+    String email = scan.next();
 
-	     if (email.length()<=8) {
-	            System.out.println("Emailiniz en az 10 haneli olmalıdır.");
-}
-	     else if (domain.equals("@gmail.com")) {
-	            System.out.println("Giriş başarılı.");
-}
-	     else {
-	            System.out.println("Domaini google olan bir email kullanınız.");
-}
-	
+    if (email.length() < 10) {
+        System.out.println("Emailiniz en az 10 haneli olmalıdır.");
+}   else     
+    
+    if (email.endsWith("@gmail.com")) {
+            System.out.println("Giriş başarılı.");
+}   else {
+            System.out.println("Domaini google olan bir email kullanınız.");
+}	
 // Aslında email kısmını endswith ile yapmak istiyordum fakat bir türlü yapamadım. Eğer yapılabiliyorsa gösterirseniz sevinirim.
-	
-	     String islem = "" ;
-	     String toplama = "+" ;
-	     String cikarma = "-" ;
-	     String bolme = "/" ;
-	     String carpma = "*" ;
-	     System.out.println("İşleminizin işaretini (*,/,+,-) giriniz");
-	     islem = scan.next();
-	     if (islem.equals(toplama) || islem.equals(cikarma) || islem.equals(bolme) || islem.equals(carpma)) {
-}        else {
-	     System.out.println("Geçersiz işlem adı girildi.");
-}	    	     	    
-	     if (islem.equals(toplama) || islem.equals(cikarma) || islem.equals(bolme) || islem.equals(carpma)) {
-	     System.out.printf("İşlem yapılacak sayı adedini giriniz.Minimum 2 adet sayı giriniz.");
-	     int sayilar = scan.nextInt();
-	     if (sayilar<2) {
-	     System.out.println("En az 2 adet sayı ile işlem yapabilirsiniz");
-	     }else {
-	    	 double sonuc = 0;
-             
-         System.out.println("İlk sayıyı giriniz:");
-             double ilkSayi = scan.nextDouble();
-             sonuc = ilkSayi; 
-             
-             for (int i = 1; i < sayilar; i++) {
-         System.out.println((i + 1) + ". sayıyı giriniz:");
-         double sayi = scan.nextDouble();                                  
-         if (islem.equals(toplama)) {
-         sonuc += sayi;
-} 
-         else if (islem.equals(cikarma)) {
-         sonuc -= sayi;
-} 
-         else if (islem.equals(bolme)) {
-         sonuc /= sayi;
-} 
-         else if (islem.equals(carpma)) {
-         sonuc *= sayi;
-}
-         System.out.println("İşlemin sonucu: " + sonuc);
-         
-// for kısmında chat gpt den yardım aldım.
-         
-         String c = "ayrı";
+
+String c = "ayrı";
 	     String d = "bitişik";
          System.out.println("Türkçe'de bulunan 'ki' bağlacı nasıl yazılır? (ayrı veya bitişik)");
 	     String e = scan.next();
@@ -141,7 +96,50 @@ public class Odev3{
 	     else {
 	     System.out.println("Cevap 'ayrı' idi.");
 }
-	
+// Bana özel kısım üstteki kısım idi	
+	     
+	     String islem = "" ;
+	     String toplama = "+" ;
+	     String cikarma = "-" ;
+	     String bolme = "/" ;
+	     String carpma = "*" ;
+	     System.out.println("İşleminizin işaretini (*,/,+,-) giriniz");
+	     islem = scan.next();
+	     if (islem.equals(toplama) || islem.equals(cikarma) || islem.equals(bolme) || islem.equals(carpma)) {
+}            else {
+	     System.out.println("Geçersiz işlem adı girildi.");
+}	    	     	    
+	     if (islem.equals(toplama) || islem.equals(cikarma) || islem.equals(bolme) || islem.equals(carpma)) {
+	     System.out.printf("İşlem yapılacak sayı adedini giriniz.Minimum 2 adet sayı giriniz.");
+	     int sayilar = scan.nextInt();
+	     if (sayilar<2) {
+	     System.out.println("En az 2 adet sayı ile işlem yapabilirsiniz");
+}else {
+	    	 double sonuc = 0;
+             
+         System.out.println("İlk sayıyı giriniz:");
+             double ilkSayi = scan.nextDouble();
+             sonuc = ilkSayi; 
+             
+             for (int i = 1; i < sayilar; i++) {
+             System.out.println((i + 1) + ". sayıyı giriniz:");
+             double sayi = scan.nextDouble();                                  
+             if (islem.equals(toplama)) {
+             sonuc += sayi;
+} 
+             else if (islem.equals(cikarma)) {
+             sonuc -= sayi;
+} 
+             else if (islem.equals(bolme)) {
+             sonuc /= sayi;
+} 
+             else if (islem.equals(carpma)) {
+             sonuc *= sayi;
+}
+             System.out.println("İşlemin sonucu: " + sonuc);
+         
+// for kısmında chat gpt den yardım aldım.
+  	
 	
 	
 				
