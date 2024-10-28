@@ -59,7 +59,7 @@ public class Odev3{
 }   else {
             System.out.println("Domaini google olan bir email kullanınız.");
 }	
-// Aslında email kısmını endswith ile yapmak istiyordum fakat bir türlü yapamadım. Eğer yapılabiliyorsa gösterirseniz sevinirim.
+// Başardım endswith ile yapmayı.
 
 String c = "ayrı";
 	     String d = "bitişik";
