@@ -1,0 +1,102 @@
+package s;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Odev5 {
+
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in);
+
+        String mail = null, sifre = null;
+
+
+        int y = 0;
+        while (y < 2) {
+            System.out.println("Emailinizi giriniz.");
+            mail = scan.nextLine();
+            if (mail.endsWith("@gmail.com")) {
+                break; 
+            } else {
+                y++;
+                System.out.println("E-posta @gmail.com ile bitmelidir. Kalan deneme hakkı: " + (2 - y));
+            }
+            if (y == 2) {
+                System.out.println("DAHA MAİL GİREMİYOR KAYBOL GÖZÜMÜN ÖNÜNDEN!");
+                return;
+            }
+        }
+        
+        int u = 0;
+        while (u < 2) {
+            System.out.println("Şifrenizi giriniz.");
+            sifre = scan.nextLine();
+            if (sifre.length() >= 8) {
+                break;  
+            } else {
+                u++;
+                System.out.println("Şifre en az 8 karakter uzunluğunda olmalıdır. Kalan deneme hakkı: " + (2 - u));
+            }
+            if (u == 2) {
+                System.out.println("DAHA ŞİFRE GİREMİYOR KAYBOL ÇABUK!");
+                return; 
+            }
+        }
+
+        int g = 0;
+        int mg = 3;
+
+        while (g < mg) {
+            System.out.print("E-posta: ");
+            String a = scan.nextLine();
+            
+            System.out.print("Şifre: ");
+            String b = scan.nextLine();
+                 	
+            if (a.equals(mail) && b.equals(sifre)) {
+                System.out.println("Başarıyla giriş yaptınız!");
+                break;  
+            } else {
+                g++;
+                System.out.println("Yanlış e-posta veya şifre! Kalan deneme hakkı: " + (mg - g));
+                
+                if (g == mg) {
+                    System.out.println("HESAP MI DIZLIYON BİRADER?????");
+                }
+            }
+        }
+
+        // Faktöriyel hesaplama kısmı
+        System.out.print("Faktöriyelini hesaplamak istediğiniz sayıyı girin: ");
+        int number = scan.nextInt();
+        
+        long factorial = 1;
+        
+        if (number < 0) {
+            System.out.println("Faktöriyel negatif sayılar için hesaplanamaz.");
+        } else {
+            for (int i = 1; i <= number; i++) {
+                factorial *= i; 
+            }
+            System.out.println(number + " sayısının faktöriyel değeri: " + factorial);
+        }
+
+        Random random = new Random();
+        int evenCount = 0; 
+        int oddCount = 0;  
+        for (int i = 0; i < 50; i++) {
+            int randomNumber = random.nextInt(101); 
+            if (randomNumber % 2 == 0) {
+                evenCount++; 
+            } else {
+                oddCount++; 
+            }
+        }
+        
+        System.out.println("50 rastgele sayının sonucunda:");
+        System.out.println("Çift sayılar: " + evenCount);
+        System.out.println("Tek sayılar: " + oddCount);
+        
+        scan.close();
+    }
+}
