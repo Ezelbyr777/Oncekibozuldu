@@ -1,0 +1,82 @@
+package s;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Arrays;
+public class Odev4 {
+
+	
+
+		public static void main(String[] args) {
+		
+		// ÖDEV 1. MADDE	
+		ArrayList<String> coders = new ArrayList<String>();
+		
+		coders.add("Burak");
+		coders.add("Efe");
+		coders.add("Yusuf");
+		coders.add("Helin");
+		coders.add("Ahmet");
+		coders.add("Eylül");
+		coders.add("Semih");
+		coders.add("Emir");
+		coders.add("Ezel");
+		coders.add("Ufuk");
+		coders.add("Toprak");
+		
+		System.out.println("Yazılımcılar"+ coders);
+		
+		// ÖDEV 2. MADDE
+		coders.set(1, "Murat");
+		System.out.println("Düzenlenmiş hali"+ coders);
+		
+		// ÖDEV 3. MADDE
+		coders.remove(7);
+		System.out.println("Yeni liste"+ coders);
+		// ÖDEV 4. MADDE
+		for (int i = 0; i < coders.size(); i++) {
+            coders.set(i, coders.get(i).toUpperCase());        
+}System.out.println("Yazılımcıları büyük yazacaksın: " + coders);
+		
+int[] sayilar = {46, 12, 79};
+
+int toplam = 0;
+int max = sayilar[0];
+for (int sayi : sayilar) {
+    toplam += sayi;
+    if (sayi > max) {
+        max = sayi;
+    }
+}
+
+double ortalama = toplam / (double) sayilar.length;
+
+System.out.println("Dizi elemanları: ");
+for (int sayi : sayilar) {
+    System.out.print(sayi + " ");
+}
+System.out.println("\nToplam: " + toplam);
+System.out.println("Ortalama: " + ortalama);
+System.out.println("Maksimum: " + max);
+
+		
+		int[] sallamasyon = new int[15];
+        Random salla = new Random();
+        
+        for (int s = 0; s < sallamasyon.length; s++) {
+            sallamasyon[s] = salla.nextInt(100) + 1; 
+        }
+         
+        Arrays.sort(sallamasyon);
+    
+        System.out.println("Sıralı Değerler:");
+        for (int deger : sallamasyon) {
+            System.out.print(deger + " ");
+		
+		}
+		
+
+
+			
+	
+
+		}}
