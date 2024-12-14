@@ -1,0 +1,79 @@
+package s;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Odev6 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("\n--- ÇARPAN FONKSİYONU ---");
+        System.out.println("Lütfen çarpmak istediğiniz sayıları giriniz. Bitirmek için 'stop' yazınız:");
+        System.out.println("Sonuç: " + multiplyNumbers(scanner));
+
+        System.out.println("\n--- NOT ORTALAMASI ---");
+        calculateAverage(scanner);
+
+        System.out.println("\n--- VİZE VE FİNAL HESABI ---");
+        calculateExamScore(scanner);
+
+        scanner.close();
+    }
+
+    public static int multiplyNumbers(Scanner scanner) {
+        int result = 1;
+        while (true) {
+            System.out.print("Sayı: ");
+            String input = scanner.next();
+            if (input.equalsIgnoreCase("stop")) break;
+            try {
+                int number = Integer.parseInt(input);
+                result *= number;
+            } catch (NumberFormatException e) {
+                System.out.println("Lütfen geçerli bir sayı girin veya 'stop' yazarak çıkın.");
+            }
+        }
+        return result;
+    }
+
+    public static void calculateAverage(Scanner scanner) {
+        ArrayList<Integer> grades = new ArrayList<>();
+
+        grades.add(23);
+        grades.add(19);
+        grades.add(100);
+
+        System.out.println("Mevcut notlar: " + grades);
+        System.out.println("Yeni bir not eklemek istiyor musunuz? (yes/no)");
+        String choice = scanner.next();
+
+        while (choice.equalsIgnoreCase("yes")) {
+            System.out.print("Yeni notu girin: ");
+            int newGrade = scanner.nextInt();
+            grades.add(newGrade);
+            System.out.println("Güncel notlar: " + grades);
+            System.out.println(" (yes/no)");
+            choice = scanner.next();
+        }
+
+        double average = grades.stream().mapToInt(Integer::intValue).average().orElse(0);
+        System.out.println("Notların Ortalaması: " + average);
+    }
+
+
+    public static void calculateExamScore(Scanner scanner) {
+        System.out.print("Vize notunuzu girin: ");
+        double midterm = scanner.nextDouble();
+
+        System.out.print("Final notunuzu girin: ");
+        double finalExam = scanner.nextDouble();
+
+        double result = (midterm * 0.4) + (finalExam * 0.6);
+        
+        if (result>= 50) {
+        System.out.println("Toplam notunuz: " + result + "\nGeçtiniz!");
+}
+        else {
+        System.out.println("Toplam notunuz:"+ result + "\nKaldınız!");
+    }
+}}
