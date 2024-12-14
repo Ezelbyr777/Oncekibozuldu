@@ -1,0 +1,26 @@
+package s;
+
+public class cokopp {
+	    private int localVar;
+	    
+	    public cokopp(int initialValue) {
+	        this.localVar = initialValue;
+	    }
+
+	    public int getLocalVar() {
+	        return localVar;
+	    }
+
+	    public void setLocalVar(int newValue) {
+	        this.localVar = newValue;
+	    }
+
+	    public static void main(String[] args) {
+	        cokopp manager = new cokopp(10);
+
+	        System.out.println("Yerel değişkenin ilk değeri: " + manager.getLocalVar());
+
+	        manager.setLocalVar(25);
+	        System.out.println("Yerel değişkenin güncel değeri: " + manager.getLocalVar());
+}
+	    }
