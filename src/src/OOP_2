@@ -1,0 +1,42 @@
+package s;
+import java.util.Scanner;
+
+public class Cokoop_2 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        Cokoop istanbul = new Cokoop("Istanbul", "Marmara", "Kumpir", 34);
+
+        System.out.println("Şehrin adı: " + istanbul.getName());
+        System.out.println("Bölgesi: " + istanbul.getRegion());
+        System.out.println("Ünlü yemeği: " + istanbul.getFamousDish());
+        System.out.println("Plaka numarası: " + istanbul.getCityNumber());
+
+        System.out.println("Yeni bir şehir eklemek ister misiniz? (true/false)");
+        boolean addNewCity = scan.nextBoolean();
+        scan.nextLine(); 
+
+        if (addNewCity) {
+            System.out.println("Şehrin adını giriniz:");
+            String name = scan.nextLine();
+
+            System.out.println("Şehrin bulunduğu bölgeyi giriniz:");
+            String region = scan.nextLine();
+
+            System.out.println("Şehrin ünlü yemeğini giriniz:");
+            String famousDish = scan.nextLine();
+
+            System.out.println("Şehrin plaka numarasını giriniz:");
+            int cityNumber = scan.nextInt();
+
+            Cokoop userCity = new Cokoop(name, region, famousDish, cityNumber);
+
+            System.out.println("Şehrin adı: " + userCity.getName());
+            System.out.println("Bölgesi: " + userCity.getRegion());
+            System.out.println("Ünlü yemeği: " + userCity.getFamousDish());
+            System.out.println("Plaka numarası: " + userCity.getCityNumber());
+        }
+
+        scan.close();
+    }
+}
