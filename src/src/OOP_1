@@ -1,0 +1,55 @@
+package s;
+
+public class Cokoop {
+
+    String name;
+    String region;
+    String famousDish;
+    int cityNumber;
+
+    public Cokoop(String name, String region, String famousDish, int cityNumber) {
+        this.name = name.toUpperCase();
+        this.region = region.toUpperCase();
+        this.famousDish = famousDish.toUpperCase();
+        this.cityNumber = cityNumber;
+    }
+
+    public Cokoop(String name, String region, String famousDish) {
+        this.name = name.toUpperCase();
+        this.region = region.toUpperCase();
+        this.famousDish = famousDish.toUpperCase();
+        this.cityNumber = 0;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name.toUpperCase();
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region.toUpperCase();
+    }
+
+    public String getFamousDish() {
+        return famousDish;
+    }
+
+    public void setFamousDish(String famousDish) {
+        this.famousDish = famousDish.toUpperCase();
+    }
+
+    public int getCityNumber() {
+        return cityNumber;
+    }
+
+    public void setCityNumber(int cityNumber) {
+        this.cityNumber = cityNumber;
+    }
+}
